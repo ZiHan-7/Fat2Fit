@@ -1,18 +1,27 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
+import { Group } from "./Group";
 
-@Entity()
+@Entity({name: "users"})
 export class User {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    firstName: string;
-
-    @Column()
-    lastName: string;
+    name : string;
 
     @Column()
     age: number;
+
+    @Column({name: "original_weight"})
+    originalWeight: number;
+
+    @Column()
+    height : number;
+
+    @ManyToOne(type => Group)
+    @JoinColumn({ name: 'group_id' })
+    group: Group
+
 
 }

@@ -1,9 +1,9 @@
 {
    "type": "mssql",
    "host": "localhost",
-   "username": "sa",
-   "password": "Admin12345",
-   "database": "tempdb",
+   "username": "asyrafchelah",
+   "password": "happy.123",
+   "database": "fat2fit_db",
    "synchronize": true,
    "logging": false,
    "entities": [
