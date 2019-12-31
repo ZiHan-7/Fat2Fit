@@ -17,10 +17,10 @@ export interface Data{
 export class CreateUserComponent implements OnInit {
 
   userForm =new FormGroup({
-  inputName : new FormControl(),
-  inputAge : new FormControl(),
-  inputWeight : new FormControl(),
-  inputHeight : new FormControl()
+    inputName : new FormControl(),
+    inputAge : new FormControl(),
+    inputWeight : new FormControl(),
+    inputHeight : new FormControl()
   })
   
   // @Input()
@@ -38,11 +38,12 @@ export class CreateUserComponent implements OnInit {
   }
  onSubmit(){
   this.userService.setFormValues(this.userForm.value, "user")
+  console.log(this.userForm.value)
  }
 
   onClickReset() {
   
-  this.userForm.reset();
+  this.userForm.value.reset();
 
   }
 

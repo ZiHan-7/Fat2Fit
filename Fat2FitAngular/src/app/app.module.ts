@@ -10,6 +10,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ActivitiesComponent } from './activities/activities.component';
     AppRoutingModule,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
