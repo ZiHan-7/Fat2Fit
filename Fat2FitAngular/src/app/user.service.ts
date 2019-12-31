@@ -35,9 +35,9 @@ export class UserService {
       "age": currentValue.user.inputAge,
       "original_weight": currentValue.user.inputWeight,
       "height ": currentValue.user.inputHeight,
-
-    })
-
+    }).subscribe(response => {
+      console.log(response)
+  })
   }
 
 }
