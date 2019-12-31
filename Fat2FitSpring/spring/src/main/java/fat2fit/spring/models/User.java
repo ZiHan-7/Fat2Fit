@@ -47,7 +47,7 @@ public class User {
     @JoinColumn(name = "group_id")
     private Group group;
 
-    @JsonIgnoreProperties("record")
+    @JsonIgnoreProperties("user")
     @OneToMany(mappedBy = "user")
     private Set<Record> records;
 
@@ -108,13 +108,13 @@ public class User {
         this.group = group;
     }
 
-    public Set<Record> getRecords() {
-        return this.records;
-    }
+    // public Set<Record> getRecords() {
+    //     return this.records;
+    // }
 
-    public void setRecords(Set<Record> records) {
-        this.records = records;
-    }
+    // public void setRecords(Set<Record> records) {
+    //     this.records = records;
+    // }
 
     
 

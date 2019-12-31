@@ -1,5 +1,7 @@
 package fat2fit.spring.models;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +34,7 @@ public class Record {
     @Column(name="user_id", insertable = false, updatable = false)
     private Long userId;
 
-    @JsonIgnoreProperties("user")
+    @JsonIgnoreProperties("records")
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -49,11 +51,14 @@ public class Record {
     @Column(name = "exercise_list")
     private String exerciseList;
 
-    @Column(name = "created_time")
-    private String createdTime;
+    @Column(name = "calory_burn")
+    private String caloryBurn;
 
-    @Column(name = "updated_time")
-    private String updatedTime;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
 
     public Long getId() {
@@ -128,20 +133,33 @@ public class Record {
         this.exerciseList = exerciseList;
     }
 
-    public String getCreatedTime() {
-        return this.createdTime;
+
+    public String getCaloryBurn() {
+        return this.caloryBurn;
     }
 
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
+    public void setCaloryBurn(String caloryBurn) {
+        this.caloryBurn = caloryBurn;
     }
 
-    public String getUpdatedTime() {
-        return this.updatedTime;
+
+
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
     }
 
-    public void setUpdatedTime(String updatedTime) {
-        this.updatedTime = updatedTime;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
+
+    public LocalDateTime getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    
     
 }

@@ -33,6 +33,7 @@ public class UserController {
     public List<User> index(){
         return repo.findAll();
     }
+    
 
     @PostMapping(value="/users")
     public User create(@RequestBody User user) {
@@ -43,9 +44,10 @@ public class UserController {
     @PutMapping(value = "/users/{id}")
     public User update(@PathVariable("id") Long id, @RequestBody User data){
        User existingUser = repo.findById(id).orElse(null);
-
-       if (existingUser != null) {
-           existingUser.setGroupId(data.getGroupId());
+       Group existingGroup =  groupRepo.findById(data.getGroup().getId()).orElse(null);
+       System.out.println(data.getGroup().getId());
+       if (existingUser != null && existingGroup != null) {
+           existingUser.setGroup(existingGroup);
            repo.save(existingUser);
        }
 
