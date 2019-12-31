@@ -38,7 +38,7 @@ export class CreateUserComponent implements OnInit {
   }
  onSubmit(){
   this.userService.setFormValues(this.userForm.value, "user")
-  
+  this.userService.saveToDb
  }
 
   onClickReset() {
